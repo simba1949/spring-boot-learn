@@ -1,0 +1,6 @@
+user:
+  username: jarvis
+  age: 20
+  # 日期类可以写成 年/月/日
+  birthday: 1949/10/01
+  flag: true

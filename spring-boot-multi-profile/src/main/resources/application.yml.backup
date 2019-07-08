@@ -1,0 +1,9 @@
+#spring:
+#  profiles:
+#    active: test
+user:
+  username: jarvis
+  say: hi,${user.username}
+
+server:
+  port: 8080
