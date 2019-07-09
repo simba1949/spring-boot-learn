@@ -821,7 +821,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
 package top.simba1949.filter;
 
 import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -829,14 +828,14 @@ import java.io.IOException;
 
 /**
  * @Order(2) 配置多个过滤器的执行顺序，数值越小的过滤器优先执行
- * @WebFilter(urlPatterns = "/filter/**", filterName = "appFilter") 配置拦截 url
- * 
+ * @WebFilter(urlPatterns = "/filter/*", filterName = "appFilter") 配置拦截 url
+ * urlPatterns 配置规则只能使用一个 * ，否则会失效
+ *
  * @author SIMBA1949
  * @date 2019/7/8 10:49
  */
 @Order(2)
-@Component
-@WebFilter(urlPatterns = "/filter/**", filterName = "appFilter")
+@WebFilter(urlPatterns = "/filter/*", filterName = "appFilter")
 public class AppFilter implements Filter {
     /**
 	 * 过滤器逻辑
@@ -854,7 +853,269 @@ public class AppFilter implements Filter {
 }
 ```
 
-### 2.7全局异常处理
+需要在启动类上添加扫描器
+
+```java
+package top.simba1949;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
+
+/**
+ *
+ * @ServletComponentScan 需要扫描 servlet、 filter、 listener 三大组件
+ *
+ * @author SIMBA1949
+ * @date 2019/7/8 9:24
+ */
+@SpringBootApplication
+@ServletComponentScan
+public class Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+}
+```
+
+### 2.7 Servlet
+
+自定义 Servlet 类
+
+```java
+package top.simba1949.servlet;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+/**
+ *
+ * @WebServlet(urlPatterns = {"/my", "/diy"}, name = "diyServlet") urlPatterns 设置访问路径，name 设置 servlet 名称
+ *
+ * @author SIMBA1949
+ * @date 2019/7/9 6:34
+ */
+@WebServlet(urlPatterns = {"/my", "/diy"}, name = "diyServlet")
+public class MyServlet extends HttpServlet {
+    private static final long serialVersionUID = -6473768022688770593L;
+
+    /**
+	 * 自定义 servlet 的 doGet 请求
+	 * @param req
+	 * @param resp
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.println("接收到请求");
+        resp.setCharacterEncoding("utf-8");
+        resp.getWriter().append("君不见黄河之水天上来");
+    }
+}
+```
+
+需要在启动类上添加扫描器
+
+```java
+package top.simba1949;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
+
+/**
+ * 
+ * @ServletComponentScan 需要扫描 servlet、 filter、 listener 三大组件
+ * 
+ * @author SIMBA1949
+ * @date 2019/7/8 9:24
+ */
+@SpringBootApplication
+@ServletComponentScan
+public class Application {
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+}
+```
+
+### 2.8 Listener
+
+#### ServletContextListener
+
+自定义 Listener 类
+
+```java
+package top.simba1949.listener;
+
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+import javax.servlet.annotation.WebListener;
+
+/**
+ * @author SIMBA1949
+ * @date 2019/7/9 7:47
+ */
+@WebListener
+public class MyServletContextListener implements ServletContextListener {
+
+    @Override
+    public void contextInitialized(ServletContextEvent sce) {
+        System.out.println("contextInitialized");
+    }
+
+    @Override
+    public void contextDestroyed(ServletContextEvent sce) {
+        System.out.println("contextDestroyed");
+    }
+}
+```
+
+需要在启动类上添加扫描器
+
+```java
+package top.simba1949;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
+
+/**
+ *
+ * @ServletComponentScan 需要扫描 servlet、 filter、 listener 三大组件
+ *
+ * @author SIMBA1949
+ * @date 2019/7/8 9:24
+ */
+@SpringBootApplication
+@ServletComponentScan
+public class Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+}
+```
+
+#### HttpSessionListener
+
+自定义 Listener 类
+
+```java
+package top.simba1949.listener;
+
+import javax.servlet.annotation.WebListener;
+import javax.servlet.http.HttpSessionEvent;
+import javax.servlet.http.HttpSessionListener;
+
+/**
+ * @author SIMBA1949
+ * @date 2019/7/9 7:51
+ */
+@WebListener
+public class MyHttpSessionListener implements HttpSessionListener {
+
+    @Override
+    public void sessionCreated(HttpSessionEvent se) {
+        System.out.println("sessionCreated");
+    }
+
+    @Override
+    public void sessionDestroyed(HttpSessionEvent se) {
+        System.out.println("sessionDestroyed");
+    }
+}
+```
+
+需要在启动类上添加扫描器
+
+```java
+package top.simba1949;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
+
+/**
+ *
+ * @ServletComponentScan 需要扫描 servlet、 filter、 listener 三大组件
+ *
+ * @author SIMBA1949
+ * @date 2019/7/8 9:24
+ */
+@SpringBootApplication
+@ServletComponentScan
+public class Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+}
+```
+
+#### ServletRequestListener
+
+自定义 Listener 类
+
+```java
+package top.simba1949.listener;
+
+import javax.servlet.ServletRequestEvent;
+import javax.servlet.ServletRequestListener;
+import javax.servlet.annotation.WebListener;
+
+/**
+ * @author SIMBA1949
+ * @date 2019/7/9 7:53
+ */
+@WebListener
+public class MyServletRequestListener implements ServletRequestListener {
+
+    @Override
+    public void requestInitialized(ServletRequestEvent sre) {
+        System.out.println("requestInitialized");
+    }
+
+    @Override
+    public void requestDestroyed(ServletRequestEvent sre) {
+        System.out.println("requestDestroyed");
+    }
+}
+```
+
+需要在启动类上添加扫描器
+
+```java
+package top.simba1949;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
+
+/**
+ *
+ * @ServletComponentScan 需要扫描 servlet、 filter、 listener 三大组件
+ *
+ * @author SIMBA1949
+ * @date 2019/7/8 9:24
+ */
+@SpringBootApplication
+@ServletComponentScan
+public class Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+}
+```
+
+### 2.9 全局异常处理
 
 @ControllerAdvice
 
@@ -937,7 +1198,7 @@ public class ExceptionController {
 }
 ```
 
-### 2.8 配置错误页面
+### 2.10  配置错误页面
 
 For example, to map `404` to a static HTML file, your folder structure would be as follows:
 
@@ -967,7 +1228,7 @@ src/
              +- <other templates>
 ```
 
-### 2.9 SpringBootTest 测试
+### 2.11 SpringBootTest 测试
 
 ```java
 package top.simba1949;

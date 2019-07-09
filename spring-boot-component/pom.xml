@@ -39,8 +39,7 @@
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
         </dependency>
-
-
+        
         <!--spring boot starter web : Starter for building web, including RestFul, applications using Spring MVC. Uses Tomcat as the default embedded container-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -82,7 +81,7 @@
             <resource>
                 <directory>src/main/java</directory>
                 <includes>
-                    <include>**/*</include>
+                    <include>**/*.xml</include>
                 </includes>
             </resource>
             <resource>

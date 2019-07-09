@@ -4,3 +4,6 @@ server:
 spring:
   application:
     name: spring-boot-component
+logging:
+  level:
+    root: debug

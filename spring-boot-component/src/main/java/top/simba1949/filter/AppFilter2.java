@@ -1,7 +1,6 @@
 package top.simba1949.filter;
 
 import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Component;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -12,8 +11,7 @@ import java.io.IOException;
  * @date 2019/7/8 11:05
  */
 @Order(3)
-@Component
-@WebFilter(urlPatterns = "/filter/**", filterName = "appFilter2")
+@WebFilter(urlPatterns = "/filter/*", filterName = "appFilter2")
 public class AppFilter2 implements Filter {
 
 	@Override
