@@ -1285,5 +1285,71 @@ public class ApplicationTest {
 }
 ```
 
+### 2.12 Web 容器替换
+
+```xml
+<!--spring boot starter web : Starter for building web, including RestFul, applications using Spring MVC. Uses Tomcat as the default embedded container-->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+    <exclusions>
+        <!--排除tomcat，替换成 spring-boot-starter-jetty 或者 spring-boot-starter-undertow都可-->
+        <exclusion>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+        </exclusion>
+    </exclusions>
+</dependency>
+<!--spring-boot-starter-jetty 和 spring-boot-starter-undertow 选其一-->
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-jetty</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-undertow</artifactId>
+</dependency>
+```
+
+### 2.13 将 SpringBoot 项目注册到 CentOS 7 服务上
+
+在 /etc/systemd/system/ 目录下新建 fs.service，填写下面内容
+
+```shell
+[Unit]
+Description=fs service
+After=syslog.target
+
+[Service]
+Type=simple
+ExecStart= /usr/ide/jdk/jdk1.8.0_211/bin/java -jar /home/apps/spring-boot-servlet-container-1.0-SNAPSHOT.jar
+
+[Install]
+WantedBy=multi-user.target
+```
+
+* Description (服务描述)：
+* /usr/ide/jdk/jdk1.8.0_211/bin/java ：jdk 安装路径
+* /home/apps/spring-boot-servlet-container-1.0-SNAPSHOT.jar ：SpringBoot 项目路径
+
+命令相关：
+
+```shell
+# 刷新服务配置文件
+systemctl daemon-reload
+# 服务设置为开机启动
+systemctl enable fs.service
+# 启动服务
+systemctl start  fs.service
+# 停止服务
+systemctl stop fs.service
+# 查看服务状态
+systemctl status  fs.service
+# 查看日志
+journalctl -u fs.service
+```
+
+
+
 
 
