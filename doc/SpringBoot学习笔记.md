@@ -1349,7 +1349,11 @@ systemctl status  fs.service
 journalctl -u fs.service
 ```
 
+## 3 应用监控
 
+博文参考：https://blog.csdn.net/SIMBA1949/article/details/89261805
+
+官网参考：https://docs.spring.io/spring-boot/docs/2.2.0.BUILD-SNAPSHOT/reference/html/production-ready-features.html#production-ready
 
 
 

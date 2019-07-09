@@ -5,16 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>top.simba1949</groupId>
-    <artifactId>springboot-learn</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>spring-boot-actuator</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>spring-boot-get-start</module>
-        <module>spring-boot-multi-profile</module>
-        <module>spring-boot-component</module>
-        <module>spring-boot-servlet-container</module>
-        <module>spring-boot-actuator</module>
-    </modules>
 
     <!-- Inherit defaults from Spring Boot -->
     <parent>
