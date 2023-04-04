@@ -4,12 +4,14 @@ import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import top.simba1949.config.ConfigurationPropertiesAndEnableConfig;
 
 /**
  * @author SIMBA1949
  * @date 2019/7/7 13:23
  */
+@EnableScheduling
 @EnableConfigurationProperties(value = {ConfigurationPropertiesAndEnableConfig.class})
 @SpringBootApplication
 public class SpringBootGetStartApplication {
