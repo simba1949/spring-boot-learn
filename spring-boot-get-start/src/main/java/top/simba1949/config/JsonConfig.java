@@ -18,6 +18,9 @@ import java.time.format.DateTimeFormatter;
 @JsonComponent
 public class JsonConfig {
 
+    /**
+     * 自定义序列化
+     */
     public static class Serializer extends JsonSerializer<User>{
 
         @Override
@@ -34,6 +37,9 @@ public class JsonConfig {
         }
     }
 
+    /**
+     * 自定义反序列化
+     */
     public static class Deserializer extends JsonDeserializer<User>{
 
         @Override
