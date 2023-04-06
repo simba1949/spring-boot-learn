@@ -14,6 +14,7 @@
         <module>spring-boot-component</module>
         <module>spring-boot-servlet-container</module>
         <module>spring-boot-actuator</module>
+        <module>spring-boot-test</module>
     </modules>
 
 
