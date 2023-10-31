@@ -182,7 +182,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @author SIMBA1949
- * @date 2019/7/7 13:23
+ * @version 2019/7/7 13:23
  */
 @SpringBootApplication
 public class Application {
@@ -415,7 +415,7 @@ import java.io.Serializable;
  * 使用 @ConfigurationProperties(prefix = "user") 指定前缀，并提供 setter 方法
  *
  * @author SIMBA1949
- * @date 2019/7/7 22:00
+ * @version 2019/7/7 22:00
  */
 @Configuration
 @ConfigurationProperties(prefix = "user")
@@ -468,7 +468,7 @@ import java.util.Date;
  * 使用 @PropertySource(value = "classpath:author.properties") 注解，并指定文件路径，使用 @Value 可以获取配置信息的数据
  * 
  * @author SIMBA1949
- * @date 2019/7/7 22:32
+ * @version 2019/7/7 22:32
  */
 @Configuration
 @PropertySource(value = "classpath:author.properties")
@@ -665,7 +665,7 @@ import java.io.IOException;
 
 /**
  * @author SIMBA1949
- * @date 2019/7/8 8:45
+ * @version 2019/7/8 8:45
  */
 @RestController
 @RequestMapping("file")
@@ -707,7 +707,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * @author SIMBA1949
- * @date 2019/7/8 9:15
+ * @version 2019/7/8 9:15
  */
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
@@ -743,7 +743,7 @@ import javax.servlet.http.HttpServletResponse;
  * 自定义拦截器需要实现 HandlerInterceptor 接口，根据业务重写下面方法
  * 
  * @author SIMBA1949
- * @date 2019/7/8 9:26
+ * @version 2019/7/8 9:26
  */
 public class UserInterceptor implements HandlerInterceptor {
     /**
@@ -796,11 +796,11 @@ package top.simba1949.config;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import top.simba1949.interceptor.UserInterceptor;
+import interceptor.vip.openpark.UserInterceptor;
 
 /**
  * @author SIMBA1949
- * @date 2019/7/8 9:29
+ * @version 2019/7/8 9:29
  */
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
@@ -832,7 +832,7 @@ import java.io.IOException;
  * urlPatterns 配置规则只能使用一个 * ，否则会失效
  *
  * @author SIMBA1949
- * @date 2019/7/8 10:49
+ * @version 2019/7/8 10:49
  */
 @Order(2)
 @WebFilter(urlPatterns = "/filter/*", filterName = "appFilter")
@@ -867,7 +867,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
  * @ServletComponentScan 需要扫描 servlet、 filter、 listener 三大组件
  *
  * @author SIMBA1949
- * @date 2019/7/8 9:24
+ * @version 2019/7/8 9:24
  */
 @SpringBootApplication
 @ServletComponentScan
@@ -898,7 +898,7 @@ import java.io.IOException;
  * @WebServlet(urlPatterns = {"/my", "/diy"}, name = "diyServlet") urlPatterns 设置访问路径，name 设置 servlet 名称
  *
  * @author SIMBA1949
- * @date 2019/7/9 6:34
+ * @version 2019/7/9 6:34
  */
 @WebServlet(urlPatterns = {"/my", "/diy"}, name = "diyServlet")
 public class MyServlet extends HttpServlet {
@@ -934,7 +934,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
  * @ServletComponentScan 需要扫描 servlet、 filter、 listener 三大组件
  * 
  * @author SIMBA1949
- * @date 2019/7/8 9:24
+ * @version 2019/7/8 9:24
  */
 @SpringBootApplication
 @ServletComponentScan
@@ -960,7 +960,7 @@ import javax.servlet.annotation.WebListener;
 
 /**
  * @author SIMBA1949
- * @date 2019/7/9 7:47
+ * @version 2019/7/9 7:47
  */
 @WebListener
 public class MyServletContextListener implements ServletContextListener {
@@ -991,7 +991,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
  * @ServletComponentScan 需要扫描 servlet、 filter、 listener 三大组件
  *
  * @author SIMBA1949
- * @date 2019/7/8 9:24
+ * @version 2019/7/8 9:24
  */
 @SpringBootApplication
 @ServletComponentScan
@@ -1016,7 +1016,7 @@ import javax.servlet.http.HttpSessionListener;
 
 /**
  * @author SIMBA1949
- * @date 2019/7/9 7:51
+ * @version 2019/7/9 7:51
  */
 @WebListener
 public class MyHttpSessionListener implements HttpSessionListener {
@@ -1047,7 +1047,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
  * @ServletComponentScan 需要扫描 servlet、 filter、 listener 三大组件
  *
  * @author SIMBA1949
- * @date 2019/7/8 9:24
+ * @version 2019/7/8 9:24
  */
 @SpringBootApplication
 @ServletComponentScan
@@ -1072,7 +1072,7 @@ import javax.servlet.annotation.WebListener;
 
 /**
  * @author SIMBA1949
- * @date 2019/7/9 7:53
+ * @version 2019/7/9 7:53
  */
 @WebListener
 public class MyServletRequestListener implements ServletRequestListener {
@@ -1103,7 +1103,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
  * @ServletComponentScan 需要扫描 servlet、 filter、 listener 三大组件
  *
  * @author SIMBA1949
- * @date 2019/7/8 9:24
+ * @version 2019/7/8 9:24
  */
 @SpringBootApplication
 @ServletComponentScan
@@ -1140,7 +1140,7 @@ import java.io.IOException;
  * @ControllerAdvice 全局异常统一处理类标识
  * 
  * @author SIMBA1949
- * @date 2019/7/8 10:22
+ * @version 2019/7/8 10:22
  */
 @ControllerAdvice
 public class GlobalException {
@@ -1178,7 +1178,7 @@ import java.io.IOException;
 
 /**
  * @author SIMBA1949
- * @date 2019/7/8 10:32
+ * @version 2019/7/8 10:32
  */
 @RestController
 @RequestMapping("e")
@@ -1251,7 +1251,7 @@ import org.springframework.web.context.WebApplicationContext;
  * @RunWith(SpringRunner.class) 告诉JUnit使用Spring的测试支持
  * @SpringBootTest 使用Spring Boot支持的引导,需要加载springboot的配置文件
  * @author SIMBA1949
- * @date 2018/11/28 22:05
+ * @version 2018/11/28 22:05
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
