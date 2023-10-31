@@ -1,0 +1,13 @@
+#org.springframework.context.ApplicationListener=\
+#  vip.openpark.listener.ApplicationStartingEventListener, \
+#  vip.openpark.listener.ApplicationEnvironmentPreparedEventListener, \
+#  vip.openpark.listener.ApplicationContextInitializedEventListener, \
+#  vip.openpark.listener.ApplicationPreparedEventListener, \
+#  vip.openpark.listener.ApplicationStartedEventListener, \
+#  vip.openpark.listener.AvailabilityChangeEventLivenessStateListener, \
+#  vip.openpark.listener.ApplicationReadyEventListener, \
+#  vip.openpark.listener.AvailabilityChangeEventReadinessStateListener, \
+#  vip.openpark.listener.ApplicationFailedEventListener
+
+#org.springframework.boot.SpringApplicationRunListener= \
+#  vip.openpark.listener.MySpringApplicationRunListener
