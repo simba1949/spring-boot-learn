@@ -1,8 +1,8 @@
-package vip.openpark.controller;
+package vip.openpark.test.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
-import vip.openpark.domain.UserEntity;
+import vip.openpark.test.domain.UserEntity;
 
 /**
  * @author anthony

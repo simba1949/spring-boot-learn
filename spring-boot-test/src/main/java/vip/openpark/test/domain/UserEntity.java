@@ -1,4 +1,4 @@
-package vip.openpark.domain;
+package vip.openpark.test.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

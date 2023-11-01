@@ -1,10 +1,10 @@
-package vip.openpark.controller;
+package vip.openpark.test.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import vip.openpark.domain.UserEntity;
+import vip.openpark.test.domain.UserEntity;
 
 import java.time.LocalDateTime;
 
