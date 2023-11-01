@@ -15,7 +15,7 @@ public class UserSchedule {
     /**
      * 秒 分 时 月份中的日 月 周中的日
      */
-    // @Scheduled(cron = "* * * * * *")
+     @Scheduled(cron = "* * * * * *")
     public void run(){
         log.info("The schedule is run");
     }
