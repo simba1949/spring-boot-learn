@@ -27,7 +27,7 @@ public class Junit5Test {
     public void insertTest(){
         UserEntity userEntity = UserEntity.builder().username("李白").gmtCreate(LocalDateTime.now()).build();
 
-        String result = userController.insert(userEntity);
+        String result = userController.add(userEntity);
 
         log.info("响应结果为{}", result);
     }
