@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * 使用 @PropertySource(value = "classpath:author.yml") 注解，并指定文件路径，使用 @Value 可以获取配置信息的数据
  *
- * @author SIMBA1949
+ * @author anthony
  * @version 2019/7/7 22:32
  */
 @Configuration

@@ -9,7 +9,7 @@ import java.io.IOException;
 /**
  * @ControllerAdvice 全局异常统一处理类标识
  *
- * @author SIMBA1949
+ * @author anthony
  * @version 2019/7/8 10:22
  */
 @ControllerAdvice

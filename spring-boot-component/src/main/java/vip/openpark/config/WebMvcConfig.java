@@ -6,7 +6,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import vip.openpark.interceptor.UserInterceptor;
 
 /**
- * @author SIMBA1949
+ * @author anthony
  * @version 2019/7/8 9:29
  */
 @Configuration

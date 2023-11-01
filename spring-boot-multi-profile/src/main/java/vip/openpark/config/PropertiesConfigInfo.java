@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * 使用 @ConfigurationProperties(prefix = "user") 指定前缀，并提供 setter 方法
  *
- * @author SIMBA1949
+ * @author anthony
  * @version 2019/7/7 22:00
  */
 @Configuration

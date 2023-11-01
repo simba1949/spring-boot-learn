@@ -1,11 +1,9 @@
 package vip.openpark.filter;
 
+import jakarta.servlet.*;
+import jakarta.servlet.annotation.WebFilter;
 import org.springframework.core.annotation.Order;
 
-import javax.servlet.*;
-import javax.servlet.annotation.WebFilter;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
@@ -13,7 +11,7 @@ import java.io.IOException;
  * @WebFilter(urlPatterns = "/filter/*", filterName = "appFilter") 配置拦截 url
  * urlPatterns 配置规则只能使用一个 * ，否则会失效
  *
- * @author SIMBA1949
+ * @author anthony
  * @version 2019/7/8 10:49
  */
 @Order(2)

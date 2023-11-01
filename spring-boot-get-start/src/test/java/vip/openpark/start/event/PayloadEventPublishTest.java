@@ -24,13 +24,5 @@ public class PayloadEventPublishTest {
         StringEvent stringEvent = new StringEvent("人生得意须尽欢");
         // 发送
         eventPublisher.sendEvent(stringEvent);
-
-        CountDownLatch countDownLatch = new CountDownLatch(1);
-        try {
-            // 阻塞等待事件监听
-            countDownLatch.await();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
 }

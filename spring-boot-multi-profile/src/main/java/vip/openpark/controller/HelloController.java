@@ -8,7 +8,7 @@ import vip.openpark.config.OtherPropertiesConfig;
 import vip.openpark.config.PropertiesConfigInfo;
 
 /**
- * @author SIMBA1949
+ * @author anthony
  * @version 2019/7/7 22:00
  */
 @RestController

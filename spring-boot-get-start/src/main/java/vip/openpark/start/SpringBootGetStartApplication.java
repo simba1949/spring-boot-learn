@@ -1,31 +1,20 @@
 package vip.openpark.start;
 
-import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.scheduling.annotation.EnableScheduling;
-import vip.openpark.start.config.ConfigurationPropertiesAndEnableConfig;
+import vip.openpark.start.config.StochasticEnableConfig;
 
 /**
- * @author SIMBA1949
+ * @author anthony
  * @version 2019/7/7 13:23
  */
-@EnableScheduling
-@EnableConfigurationProperties(value = {ConfigurationPropertiesAndEnableConfig.class})
+@ConfigurationPropertiesScan
+@EnableConfigurationProperties(value = {StochasticEnableConfig.class})
 @SpringBootApplication
 public class SpringBootGetStartApplication {
     public static void main(String[] args) {
-        SpringApplication application = new SpringApplication(SpringBootGetStartApplication.class);
-        application.setBannerMode(Banner.Mode.OFF); // 关闭 Banner
-
-        application.run(args);
+        new SpringApplication(SpringBootGetStartApplication.class).run(args);
     }
-
-//    public static void main(String[] args) {
-//        new SpringApplicationBuilder()
-//                .sources(SpringBootGetStartApplication.class) // 项目中的启动类
-//                .bannerMode(Banner.Mode.OFF)
-//                .run(args);
-//    }
 }

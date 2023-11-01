@@ -14,7 +14,7 @@ import java.util.Date;
 @Data
 @Configuration
 @PropertySource(value = "classpath:author.properties")
-public class CustomizePropertiesConfig {
+public class CustomizeConfig {
 
     @Value("${username}")
     private String username;

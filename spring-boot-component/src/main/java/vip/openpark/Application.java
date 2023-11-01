@@ -8,7 +8,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
  *
  * @ServletComponentScan 需要扫描 servlet、 filter、 listener 三大组件
  *
- * @author SIMBA1949
+ * @author anthony
  * @version 2019/7/8 9:24
  */
 @SpringBootApplication

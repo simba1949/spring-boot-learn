@@ -1,15 +1,14 @@
 package vip.openpark.interceptor;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * 自定义拦截器需要实现 HandlerInterceptor 接口，根据业务重写下面方法
  *
- * @author SIMBA1949
+ * @author anthony
  * @version 2019/7/8 9:26
  */
 public class UserInterceptor implements HandlerInterceptor {

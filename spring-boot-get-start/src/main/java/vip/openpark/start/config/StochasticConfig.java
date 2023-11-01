@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Data
 @Configuration
-public class ConfigurationConfig {
+public class StochasticConfig {
 
     @Value("${stochastic.strVal}")
     private String strVal;
