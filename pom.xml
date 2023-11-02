@@ -12,7 +12,7 @@
     <modules>
         <module>spring-boot-get-start</module>
         <module>spring-boot-multi-profile</module>
-        <module>spring-boot-component</module>
+        <module>spring-boot-servlet-web</module>
         <module>spring-boot-servlet-container</module>
         <module>spring-boot-actuator</module>
         <module>spring-boot-test</module>
