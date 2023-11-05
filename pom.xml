@@ -16,6 +16,7 @@
         <module>spring-boot-servlet-container</module>
         <module>spring-boot-actuator</module>
         <module>spring-boot-test</module>
+        <module>spring-boot-cache</module>
     </modules>
 
     <properties>
