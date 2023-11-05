@@ -1,4 +1,4 @@
-package vip.openpark;
+package vip.openpark.servlet.container;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @version 2019/7/9 8:39
  */
 @SpringBootApplication
-public class Application {
+public class ServletContainerApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(ServletContainerApplication.class, args);
 	}
 }
