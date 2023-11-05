@@ -1,4 +1,4 @@
-package vip.openpark.test.controller;
+package vip.openpark.multi.profile.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.PostMapping;

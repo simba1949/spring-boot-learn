@@ -1,11 +1,11 @@
-package vip.openpark.test.controller;
+package vip.openpark.multi.profile.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import vip.openpark.config.OtherPropertiesConfig;
-import vip.openpark.config.PropertiesConfigInfo;
+import vip.openpark.multi.profile.config.OtherPropertiesConfig;
+import vip.openpark.multi.profile.config.PropertiesConfigInfo;
 
 /**
  * @author anthony

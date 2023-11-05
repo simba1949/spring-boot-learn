@@ -1,4 +1,4 @@
-package vip.openpark.config;
+package vip.openpark.multi.profile.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

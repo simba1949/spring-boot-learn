@@ -1,4 +1,4 @@
-package vip.openpark;
+package vip.openpark.multi.profile;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @version 2019/7/7 21:58
  */
 @SpringBootApplication
-public class Application {
+public class MultiProfileApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(MultiProfileApplication.class, args);
 	}
 }
