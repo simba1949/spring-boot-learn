@@ -33,12 +33,19 @@ public class JdkTypeValueConfigTest {
 
 
         log.info("date={}", jdkTypeValueConfig.getDateVal().toString());
+        log.info("date2={}", jdkTypeValueConfig.getDateVal2().toString());
+        log.info("date3={}", jdkTypeValueConfig.getDateVal3().toString());
 
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss");
         log.info("LocalDateTime={}", dateTimeFormatter.format(jdkTypeValueConfig.getLocalDateTimeVal()));
+        log.info("LocalDateTime2={}", dateTimeFormatter.format(jdkTypeValueConfig.getLocalDateTimeVal2()));
+
         DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("uuuu-MM-dd");
         log.info("LocalDate={}", dateFormatter.format(jdkTypeValueConfig.getLocalDateVal()));
+        log.info("LocalDate2={}", dateFormatter.format(jdkTypeValueConfig.getLocalDateVal2()));
+
         DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
         log.info("LocalTime={}", timeFormatter.format(jdkTypeValueConfig.getLocalTimeVal()));
+        log.info("LocalTime2={}", timeFormatter.format(jdkTypeValueConfig.getLocalTimeVal2()));
     }
 }
